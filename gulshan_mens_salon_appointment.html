@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gulshan Mens Salon - Katghar Chauraha, Prayagraj. Book your salon appointment online.">
+<title>Gulshan Mens Salon | Appointment</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#222}
+header{background:#111;color:#fff;text-align:center;padding:28px 15px}
+header h1{margin:0;font-size:30px;letter-spacing:1px}header p{margin:8px 0 0;color:#d6b36a}
+.container{max-width:700px;margin:25px auto;padding:0 15px}
+.card{background:#fff;border-radius:18px;padding:22px;box-shadow:0 5px 20px #0001;margin-bottom:18px}
+h2{margin-top:0}.services{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.service{padding:14px;border:1px solid #ddd;border-radius:10px;background:#fafafa}
+label{display:block;margin:12px 0 6px;font-weight:bold}
+input,select,button{width:100%;padding:13px;border-radius:9px;border:1px solid #ccc;font-size:16px}
+button{border:0;background:#111;color:#fff;font-weight:bold;cursor:pointer;margin-top:16px}
+.whatsapp{background:#198754}.call{background:#333}
+.info{text-align:center;line-height:1.7}.price{float:right;color:#b8860b;font-weight:bold}
+footer{text-align:center;padding:25px;color:#777}
+@media(max-width:500px){header h1{font-size:25px}.services{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>GULSHAN MENS SALON</h1>
+  <p>Premium Men's Grooming & Styling</p>
+</header>
+
+<div class="container">
+  <div class="card info">
+    <h2>📍 Katghar Chauraha, Prayagraj</h2>
+    <p>Appointment ke liye online booking karein ya seedha call/WhatsApp karein.</p>
+    <p><b>📞 8172814947</b></p>
+  </div>
+
+  <div class="card">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service">Hair Cut <span class="price">₹100</span></div>
+      <div class="service">Beard Set <span class="price">₹50</span></div>
+      <div class="service">Shaving <span class="price">₹50</span></div>
+      <div class="service">Face Massage <span class="price">₹200+</span></div>
+      <div class="service">Facial <span class="price">₹1000</span></div>
+      <div class="service">Hair Colour <span class="price">₹150</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Book Appointment</h2>
+    <form id="bookingForm">
+      <label>Your Name</label>
+      <input id="name" required placeholder="Apna naam likhein">
+      <label>Mobile Number</label>
+      <input id="phone" required type="tel" pattern="[0-9]{10}" placeholder="10 digit mobile number">
+      <label>Service</label>
+      <select id="service" required>
+        <option value="">Service select karein</option>
+        <option>Hair Cut - ₹100</option>
+        <option>Beard Set - ₹50</option>
+        <option>Shaving - ₹50</option>
+        <option>Face Massage - ₹200+</option>
+        <option>Facial - ₹1000</option>
+        <option>Hair Colour - ₹150</option>
+      </select>
+      <label>Appointment Date</label>
+      <input id="date" required type="date">
+      <label>Preferred Time</label>
+      <input id="time" required type="time">
+      <button type="submit">WhatsApp par Appointment Book Karein</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <button class="whatsapp" onclick="location.href='https://wa.me/918172814947'">💬 WhatsApp: 8172814947</button>
+    <button class="call" onclick="location.href='tel:8172814947'">📞 Call Now</button>
+  </div>
+</div>
+
+<footer>© 2026 Gulshan Mens Salon • Katghar Chauraha, Prayagraj</footer>
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const phone=document.getElementById('phone').value;
+  const service=document.getElementById('service').value;
+  const date=document.getElementById('date').value;
+  const time=document.getElementById('time').value;
+  const msg=`Gulshan Mens Salon Appointment%0A%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0ADate: ${encodeURIComponent(date)}%0ATime: ${encodeURIComponent(time)}%0A%0ALocation: Katghar Chauraha, Prayagraj`;
+  window.open('https://wa.me/918172814947?text='+msg,'_blank');
+});
+</script>
+</body>
+</html>
